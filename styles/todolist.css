@@ -1,0 +1,32 @@
+ul{
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+li{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    background-color: whitesmoke;
+    border-radius: 13px;
+    padding: 20px 10px 20px 10px;
+
+    height: 30px;
+    font-size: 20px;
+
+    margin-left: -50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+
+    text-align: left;
+    align-items: center;
+    
+    min-width: 400px;
+}
+
+.todo_item{
+    background-color:;
+}
+
