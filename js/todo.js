@@ -42,6 +42,14 @@ const clearAll = () => {
 const activeEdit = (idx) => {
     const items = document.querySelectorAll('.todo_item');
     const item = items[idx];
+
+    // edit_input 박스, btn_edit 보이게 하기
+    const btnEdit = item.querySelector('.btn_edit');
+    const edit_input = item.querySelector('.edit_input');
+
+    btnEdit.style.display = 'block';
+    edit_input.style.display = 'block';
+
     item.classList.add('edit_active');  // 클래스 추가
 }
 
@@ -57,7 +65,8 @@ const amendTodo = (idx) => {
         newInput.focus();
     }else{
         listArray.splice(idx, 1, newValue);     // idx번째 1개값을 newValue로 바꾸기
-        item.classList.remove('edit_active');   // 자동으로 edit화면 종료
+        item.classList.remove('.edit_active');   // 자동으로 edit화면 종료
+        console.log(item);
         showList();
     }
 }
@@ -71,14 +80,17 @@ const showList = () => {
         listArray.forEach(function(text, idx){
             const itemTag = '<li class="todo_item ">' + 
                                 '<div class="edit_wrap">' + 
-                                    '<input type="text" class="edit_input" value="'+text+'" />' +
-                                    '<button class="button btn_edit" onClick="amendTodo('+idx+')">EDIT</button>' +
+                                    '<input style="display:none" type="text" class="edit_input" value="'+text+'" />' +
+                                    '<button style="display:none" class="button btn_edit" onClick="amendTodo('+idx+')">EDIT</button>' +
                                 '</div>' +
                                 '<p class="text">'+ text +'</p>' +
-                                '<button class="button btn_amend" onClick="activeEdit('+idx+')">수정</button>' +
+                                '<button class="button btn_amend" onClick="activeEdit('+idx+')">수정하기</button>' +
                                 '<button class="button btn_delete" onClick="deleteTodo('+idx+')">삭제하기</button>' +
                             '</li>'
             todoList.innerHTML += itemTag
+
+
+            document
         });
     } else{//데이터가 없으면
         todoList.innerHTML = "<li>할일을 입력해주세요 예시) 밥먹기</li>";
