@@ -10,25 +10,21 @@
         <div class="header_left">
             ToDos 앱
         </div>
-        <div class="header_right">
-            <button id="todo_add">새로운 TODO 추가하기</button>
+        <div class="wrapper">
+            <div class="form">
+                <input type="text" class="todo_input" placeholder="할일을 입력해주세요."/>
+                <button class="btn_add">새로운 TODO 추가하기</button>
+                <button class="btn_clear">전체 삭제</button>
+            </div>
         </div>
     </header>
 
     <main>
-        <ul id="todo_list">           
-            <!--------  삭제 버튼, 수정 버튼 있어야하므로, span으로 내용 감싸기
-            <li>
-            <span>"밥먹고 똥싸기"<span>
-            <button></button>
-            <button></button>
-            ....
-            </li>
-
-
-
-            -->
-        </ul>
+        <div class="todo_list_warp">
+            <ul class="todo_list">           
+                <!--    내용 -->
+            </ul>
+        </div>
     </main>
 </body>
 </html>
