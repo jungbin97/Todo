@@ -1,5 +1,4 @@
 let listArray = [];     // 할일을 저장할 배열
-let idx = localStorage.length;
 const todoList = document.querySelector('.todo_list');
 const todoInput = document.querySelector('.todo_input');    // 할일 내용 입력 input
 const btnAdd = document.querySelector('.btn_add');  //입력완료후 추가하기 버튼
@@ -32,7 +31,6 @@ const addTodo = () => {
     // 입력 되었다면 배열에 값 저장
     const newTodoObj = {
         text: inputValue,
-        idx: idx,
     };
 
     listArray.push(newTodoObj);
@@ -87,7 +85,8 @@ const amendTodo = (idx) => {
         alert("값을 입력해주세요");
         newInput.focus();
     }else{
-        listArray.splice(idx, 1, newValue);     // idx번째 1개값을 newValue로 바꾸기
+        // listArray.splice(idx, 1, newValue);     // idx번째 1개값을 newValue로 바꾸기
+        listArray[idx] = {text: newValue};
         localStorage.setItem(TODOLIST, JSON.stringify(listArray));  
         item.classList.remove('.edit_active');   // 자동으로 edit화면 종료
         console.log(item);
@@ -120,4 +119,3 @@ const showList = () => {
 
 btnAdd.addEventListener("click", addTodo);
 btnClear.addEventListener("click", clearAll);
-showList()
