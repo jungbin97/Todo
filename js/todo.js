@@ -101,7 +101,7 @@ const showList = () => {
     if (listArray.length > 0){
         todoList.innerHTML = "";    // 기존데이터를 모두 삭제 초기화
         listArray.forEach(function(todoObj, idx){
-            const itemTag = 
+            const itemTag ='<ul class = "todo_list">'+ 
                                 '<li class="todo_item">' + 
                                     '<div class="edit_wrap">' + 
                                         '<input style="display:none" type="text" class="edit_input" value="'+todoObj.text+'" />' +
@@ -110,7 +110,8 @@ const showList = () => {
                                     '<p class="text">'+ todoObj.text +'</p>' +
                                     '<button class="button btn_amend" onClick="activeEdit('+idx+')">수정하기</button>' +
                                     '<button class="button btn_delete" onClick="deleteTodo('+idx+')">삭제하기</button>' +
-                                '</li>'
+                                '</li>'+
+                            '</ul>'
             todoList.innerHTML += itemTag
         });
     } else{//데이터가 없으면

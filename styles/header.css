@@ -7,7 +7,6 @@ body {
     margin: 0;
     background-color: pink;
 
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     
 }
 
@@ -21,6 +20,7 @@ body {
     font-size: 30px;
     text-align: center;
 
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
     margin: 30px 20px 20px 30px;
 
