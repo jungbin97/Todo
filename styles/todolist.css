@@ -31,9 +31,9 @@ li {
 }
 
 .text{
-    position: absolute;
-    left: 50px;
+    position: fixed;
 }
+
 
 /*수정하기 버튼*/
 .button{
@@ -45,6 +45,6 @@ li {
 }
 
 .btn_amend{
-    position: absolute;
-    left: 750px;
+    position: fixed;
+    right: 100px;
 }
