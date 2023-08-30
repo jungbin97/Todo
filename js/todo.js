@@ -67,9 +67,10 @@ const activeEdit = (idx) => {
     // edit_input 박스, btn_edit 보이게 하기
     const btnEdit = item.querySelector('.btn_edit');
     const edit_input = item.querySelector('.edit_input');
-
+    const text = item.querySelector('.text');
     btnEdit.style.display = 'block';
     edit_input.style.display = 'block';
+    text.style.display = 'none';
 
     item.classList.add('edit_active');  // 클래스 추가
 }
@@ -101,17 +102,16 @@ const showList = () => {
     if (listArray.length > 0){
         todoList.innerHTML = "";    // 기존데이터를 모두 삭제 초기화
         listArray.forEach(function(todoObj, idx){
-            const itemTag ='<ul class = "todo_list">'+ 
+            const itemTag =
                                 '<li class="todo_item">' + 
                                     '<div class="edit_wrap">' + 
                                         '<input style="display:none" type="text" class="edit_input" value="'+todoObj.text+'" />' +
                                         '<button style="display:none" class="button btn_edit" onClick="amendTodo('+idx+')">저장하기</button>' +
                                     '</div>' +
-                                    '<p class="text">'+ todoObj.text +'</p>' +
+                                    '<p style="display:block" class="text">'+ todoObj.text +'</p>' +
                                     '<button class="button btn_amend" onClick="activeEdit('+idx+')">수정하기</button>' +
                                     '<button class="button btn_delete" onClick="deleteTodo('+idx+')">삭제하기</button>' +
-                                '</li>'+
-                            '</ul>'
+                                '</li>'
             todoList.innerHTML += itemTag
         });
     } else{//데이터가 없으면

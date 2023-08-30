@@ -3,36 +3,48 @@ ul{
     flex-direction: column-reverse;
 }
 
-li{
+li {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 
-    background-color: whitesmoke;
+
+    background-color: #ECE5F4;
     border-radius: 13px;
     padding: 20px 10px 20px 10px;
 
-    height: 30px;
-    font-size: 20px;
+    margin-left: -10px;
 
-    margin-left: -50px;
-    margin-top: 20px;
-    margin-bottom: 20px;
     margin-right: 20px;
+    margin-bottom: 10px;
 
     text-align: left;
     align-items: center;
-    
+    /*justify-content: left;*/
+
     min-width: 400px;
 }
 
-.todo_item{
-    background-color: #ECE5F4;
+.edit_wrap{
+    display: flex;
+    flex-direction: row;
 }
 
+.text{
+    position: absolute;
+    left: 50px;
+}
+
+/*수정하기 버튼*/
 .button{
-    min-width: 100px;
+    margin-right: 10px;
+    height: 30px;
     
+    cursor: pointer;
+    vertical-align: middle;
 }
 
-
+.btn_amend{
+    position: absolute;
+    left: 750px;
+}
