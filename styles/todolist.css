@@ -27,6 +27,12 @@ li{
 }
 
 .todo_item{
-    background-color:;
+    background-color: #ECE5F4;
 }
+
+.button{
+    min-width: 100px;
+    
+}
+
 
